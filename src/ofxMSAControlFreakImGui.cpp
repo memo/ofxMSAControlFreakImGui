@@ -28,11 +28,14 @@ namespace imgui {
 
 // draw a single parameter
 void draw(Parameter& p) {
+    // appending path to ensure unique names
+    string label = p.getName() + "##" + p.getPath();
+
     if(typeid(p) == typeid(ParameterGroup)) {
         auto pp = dynamic_cast<ParameterGroup*>(&p);
         if(!pp) return;
 
-        if(ImGui::CollapsingHeader(pp->getName().c_str(), "", true, pp->isOpen())) {;
+        if(ImGui::CollapsingHeader(label.c_str(), "", true, pp->isOpen())) {;
             int np = pp->size();
             for(int i=0; i<np; i++) {
                 draw(pp->get(i));
@@ -53,20 +56,20 @@ void draw(Parameter& p) {
     } else if(typeid(p) == typeid(ParameterFloat)) {
         auto pp = dynamic_cast<ParameterFloat*>(&p);
         if(!pp) return;
-        if(pp->getClamp()) ImGui::InputFloat(pp->getName().c_str(), pp->var<float>(), pp->getIncrement(), pp->getIncrement() * 10);
-        else ImGui::SliderFloat(pp->getName().c_str(), pp->var<float>(), pp->getMin(), pp->getMax());
+        if(pp->getClamp()) ImGui::InputFloat(label.c_str(), pp->var<float>(), pp->getIncrement(), pp->getIncrement() * 10);
+        else ImGui::SliderFloat(label.c_str(), pp->var<float>(), pp->getMin(), pp->getMax());
 
     } else if(typeid(p) == typeid(ParameterInt)) {
         auto pp = dynamic_cast<ParameterInt*>(&p);
         if(!pp) return;
-        if(pp->getClamp()) ImGui::InputInt(pp->getName().c_str(), pp->var<int>(), pp->getIncrement(), pp->getIncrement() * 10);
-        else ImGui::SliderInt(pp->getName().c_str(), pp->var<int>(), pp->getMin(), pp->getMax());
+        if(pp->getClamp()) ImGui::InputInt(label.c_str(), pp->var<int>(), pp->getIncrement(), pp->getIncrement() * 10);
+        else ImGui::SliderInt(label.c_str(), pp->var<int>(), pp->getMin(), pp->getMax());
 
     } else if(typeid(p) == typeid(ParameterBool)) {
         auto pp = dynamic_cast<ParameterBool*>(&p);
         if(!pp) return;
-        if(pp->getMode() == ParameterBool::kToggle) ImGui::Checkbox(pp->getName().c_str(), pp->var<bool>());
-        else if(ImGui::Button(pp->getName().c_str())) pp->set(true);
+        if(pp->getMode() == ParameterBool::kToggle) ImGui::Checkbox(label.c_str(), pp->var<bool>());
+        else if(ImGui::Button(label.c_str())) pp->set(true);
 
     } if(typeid(p) == typeid(ParameterNamedIndex)) {
         auto pp = dynamic_cast<ParameterNamedIndex*>(&p);
@@ -75,11 +78,11 @@ void draw(Parameter& p) {
         // TODO
         //        switch(pp->getMode()) {
         //        case ParameterNamedIndex::kDropdown:
-        //            ImGui::Combo(pp->getName().c_str(), pp->var<int>(), pp->getLabels(), pp->size());
+        //            ImGui::Combo(label.c_str(), pp->var<int>(), pp->getLabels(), pp->size());
         //            break;
 
         //        case ParameterNamedIndex::kList:
-        //            ImGui::ListBox(pp->getName().c_str(), pp->var<int>(), pp->getLabels(), pp->size());
+        //            ImGui::ListBox(label.c_str(), pp->var<int>(), pp->getLabels(), pp->size());
         //            break;
 
         //        case ParameterNamedIndex::kOptions:
