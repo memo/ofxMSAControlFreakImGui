@@ -75,19 +75,22 @@ void draw(Parameter& p) {
         auto pp = dynamic_cast<ParameterNamedIndex*>(&p);
         if(!pp) return;
 
-        // TODO
-        //        switch(pp->getMode()) {
-        //        case ParameterNamedIndex::kDropdown:
-        //            ImGui::Combo(label.c_str(), pp->var<int>(), pp->getLabels(), pp->size());
-        //            break;
+        std::vector<char*> clabels;
+        for(size_t i = 0; i < pp->getLabels().size(); ++i) clabels.push_back(const_cast<char*>(pp->getLabels()[i].c_str()));
+        const char** plabels = (const char**)clabels.data();
 
-        //        case ParameterNamedIndex::kList:
-        //            ImGui::ListBox(label.c_str(), pp->var<int>(), pp->getLabels(), pp->size());
-        //            break;
+//        switch(pp->getMode()) {
+//        case ParameterNamedIndex::kDropdown:
+//            ImGui::Combo(label.c_str(), pp->var<int>(), cstrings.data(), pp->size());
+//            break;
 
-        //        case ParameterNamedIndex::kOptions:
-        //            break;
-        //        }
+//        case ParameterNamedIndex::kList:
+            ImGui::ListBox(label.c_str(), pp->var<int>(), plabels, pp->size());
+//            break;
+
+//        case ParameterNamedIndex::kOptions:
+//            break;
+//        }
     }
 
     if(ImGui::IsAnyItemHovered()) {
