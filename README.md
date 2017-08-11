@@ -3,13 +3,13 @@ ofxMSAControlFreakImGui
 
 Introduction
 ------------
-[ImGui](https://github.com/ocornut/imgui) bridge for [ofxMSAControlFreak](https://github.com/memo/ofxMSAControlFreak). More information on the [ofxMSAControlFreak](https://github.com/memo/ofxMSAControlFreak) repo.
+Lightweight wrapper to display [ofxMSAControlFreak](https://github.com/memo/ofxMSAControlFreak) parameters with [ImGui](https://github.com/ocornut/imgui). See former for more information.
 
 
 Dependencies
 ------------
 In addition to [ofxMSAControlFreak](https://github.com/memo/ofxMSAControlFreak) and its dependencies, this requires:
-* ofxImGui https://github.com/jvcleave/ofxImGui
+* [ofxImGui](https://github.com/jvcleave/ofxImGui)
 
 
 Licence
