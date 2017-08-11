@@ -21,7 +21,6 @@ Project{
             'ofxMSAControlFreak',
             'ofxMSAControlFreakImGui',
             'ofxMSAOrderedPointerMap',
-            'ofxMSACore',
             'ofxMSAInteractiveObject',
         ]
 
