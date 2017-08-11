@@ -3,7 +3,11 @@ ofxMSAControlFreakImGui
 
 Introduction
 ------------
-Lightweight wrapper to display [ofxMSAControlFreak](https://github.com/memo/ofxMSAControlFreak) parameters with [ImGui](https://github.com/ocornut/imgui). See former for more information.
+Lightweight wrapper to display [ofxMSAControlFreak](https://github.com/memo/ofxMSAControlFreak) parameters with [ImGui](https://github.com/ocornut/imgui). See former for more information on ofxMSAControlFreak. Integration with ImGui is one line of code 
+
+```msa::controlfreak::imgui::draw( params );```
+
+see the [exmaple](https://github.com/memo/ofxMSAControlFreakImGui/blob/master/example/src/example-ImGui.cpp#L39) 
 
 
 Dependencies
