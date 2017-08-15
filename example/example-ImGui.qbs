@@ -17,11 +17,10 @@ Project{
 
         of.addons: [
             'ofxXmlSettings',
-            'ofxImGui',
+            'ofxMSAOrderedPointerMap',
             'ofxMSAControlFreak',
             'ofxMSAControlFreakImGui',
-            'ofxMSAOrderedPointerMap',
-            'ofxMSAInteractiveObject',
+            'ofxImGui',
         ]
 
         // additional flags for the project. the of module sets some
