@@ -56,14 +56,16 @@ void draw(Parameter& p) {
     } else if(typeid(p) == typeid(ParameterFloat)) {
         auto pp = dynamic_cast<ParameterFloat*>(&p);
         if(!pp) return;
-        if(pp->getClamp()) ImGui::InputFloat(label.c_str(), pp->var<float>(), pp->getIncrement(), pp->getIncrement() * 10);
-        else ImGui::SliderFloat(label.c_str(), pp->var<float>(), pp->getMin(), pp->getMax());
+        //if(!pp->getClamp()) ImGui::InputFloat(label.c_str(), pp->var<float>(), pp->getIncrement(), pp->getIncrement() * 10);
+        //else 
+            ImGui::SliderFloat(label.c_str(), pp->var<float>(), pp->getMin(), pp->getMax());
 
     } else if(typeid(p) == typeid(ParameterInt)) {
         auto pp = dynamic_cast<ParameterInt*>(&p);
         if(!pp) return;
-        if(pp->getClamp()) ImGui::InputInt(label.c_str(), pp->var<int>(), pp->getIncrement(), pp->getIncrement() * 10);
-        else ImGui::SliderInt(label.c_str(), pp->var<int>(), pp->getMin(), pp->getMax());
+        //if(!pp->getClamp()) ImGui::InputInt(label.c_str(), pp->var<int>(), pp->getIncrement(), pp->getIncrement() * 10);
+        //else
+            ImGui::SliderInt(label.c_str(), pp->var<int>(), pp->getMin(), pp->getMax());
 
     } else if(typeid(p) == typeid(ParameterBool)) {
         auto pp = dynamic_cast<ParameterBool*>(&p);
