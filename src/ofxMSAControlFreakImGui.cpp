@@ -100,7 +100,7 @@ void draw(Parameter& p) {
     }
 
 
-    //    ofLogWarning() << "msa::controlfreak::gui::Container::add: unknown type adding parameter " << p.getPath() << " " << p.getTypeName();
+    //    ofLogWarning("ofxMSAControlFreakImGui") << "msa::controlfreak::gui::Container::add: unknown type adding parameter " << p.getPath() << " " << p.getTypeName();
 }
 
 
