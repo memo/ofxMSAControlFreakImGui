@@ -35,7 +35,7 @@ void draw(Parameter& p) {
         auto pp = dynamic_cast<ParameterGroup*>(&p);
         if(!pp) return;
 
-        if(ImGui::CollapsingHeader(label.c_str(), "", true, pp->isOpen())) {;
+        if(ImGui::CollapsingHeader(label.c_str(), &pp->isOpen(), 0)) {;
             int np = pp->size();
             for(int i=0; i<np; i++) {
                 draw(pp->get(i));
