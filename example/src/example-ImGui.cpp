@@ -27,6 +27,7 @@ public:
     void setup() {
         // initialise all parameters
         tutorial.setup();
+		gui.setup();
     }
 
     void draw() {
