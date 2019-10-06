@@ -30,7 +30,7 @@ namespace imgui {
     // all of the below are to be called inside a gui.begin() / gui.end() block
 
     // draw a single parameter
-    void draw(Parameter& p);
+    void draw(Parameter& p, string labelPrefix = "");
 
     // draw parameter group with internal ofxImGui
 //    void draw(const ParameterGroup& params);

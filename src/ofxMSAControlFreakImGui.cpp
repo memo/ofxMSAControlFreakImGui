@@ -27,9 +27,9 @@ namespace imgui {
 
 
 // draw a single parameter
-void draw(Parameter& p) {
+void draw(Parameter& p, string labelPrefix) {
     // appending path to ensure unique names
-    string label = p.getName() + "##" + p.getPath();
+    string label = labelPrefix + p.getName() + "##" + p.getPath();
 
     if(typeid(p) == typeid(ParameterGroup)) {
         auto pp = dynamic_cast<ParameterGroup*>(&p);
