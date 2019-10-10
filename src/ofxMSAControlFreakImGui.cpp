@@ -37,6 +37,7 @@ namespace msa {
 						//auto pp = dynamic_cast<ParameterGroup*>(&p);
 						//if (!pp) return;
 
+					//ImGui::BeginChild("scrolling");
 					if (ImGui::CollapsingHeader(label.c_str(), &pp->isOpen(), 0)) {
 						;
 						int np = pp->size();
@@ -44,6 +45,7 @@ namespace msa {
 							draw(pp->get(i));
 						}
 					}
+					//ImGui::EndChild();
 
 					//            switch(pp->getMode()) {
 					//                case ParameterGroup::kPage: {
