@@ -15,47 +15,54 @@
 class ofApp : public ofBaseApp {
 public:
 
-    // declare an ofxImGui
-    ofxImGui::Gui gui;
+	// declare an ofxImGui
+	ofxImGui::Gui gui;
 
-    // flag to control whether or not to show the gui. Toggle with SPACEBAR
-    bool showGui = true;
+	// flag to control whether or not to show the gui. Toggle with SPACEBAR
+	bool showGui = true;
 
-    // this is defined in ofxMSAControlFreakTutorial.h
-    TutorialModule tutorial;
+	// this shows the classic ImGui Demo Window
+	bool showImGuiDemo = false;
 
-    void setup() {
-        // initialise all parameters
-        tutorial.setup();
+	// this is defined in ofxMSAControlFreakTutorial.h
+	TutorialModule tutorial;
+
+	void setup() {
+		// initialise all parameters
+		tutorial.setup();
 		gui.setup();
-    }
+	}
 
-    void draw() {
-        tutorial.draw();
+	void draw() {
+		tutorial.draw();
 
-        if (showGui) {
-            gui.begin();
+		if (showGui) {
+			gui.begin();
 
-            // this one line will draw the params with imgui, dynamically adjusting to changes in the params
-            msa::controlfreak::imgui::draw( tutorial.params );
-            gui.end();
-        }
-    }
+			ImGui::Checkbox("Show ImGui Demo", &showImGuiDemo);
+			if (showImGuiDemo) ImGui::ShowDemoWindow(&showImGuiDemo);
+			ImGui::Separator();
 
-    void keyPressed(int key) {
-        switch (key) {
-        case ' ': showGui ^= true; break;
-        case 's': tutorial.params.saveXmlValues(); break;
-        case 'S': tutorial.params.saveXmlSchema(); break;
-        case 'l': tutorial.params.loadXmlValues(); break;
-        case 'L': tutorial.params.loadXmlSchema(); break;
-        }
-    }
+			// this one line will draw the params with imgui, dynamically adjusting to changes in the params
+			msa::controlfreak::imgui::draw(tutorial.params);
+			gui.end();
+		}
+	}
+
+	void keyPressed(int key) {
+		switch (key) {
+		case ' ': showGui ^= true; break;
+		case 's': tutorial.params.saveXmlValues(); break;
+		case 'S': tutorial.params.saveXmlSchema(); break;
+		case 'l': tutorial.params.loadXmlValues(); break;
+		case 'L': tutorial.params.loadXmlSchema(); break;
+		}
+	}
 };
 
 //========================================================================
 int main() {
-    ofSetupOpenGL(1100, 800, OF_WINDOW);
-    ofRunApp(new ofApp);
+	ofSetupOpenGL(1100, 800, OF_WINDOW);
+	ofRunApp(new ofApp);
 }
 
