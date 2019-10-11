@@ -101,7 +101,10 @@ namespace msa {
 
 			//ImGui::SameLine();
 
-			if (ImGui::BeginPopup(presetsLabel.c_str())) {
+			ImGui::PushStyleColor(ImGuiCol_PopupBg, ImVec4(0.3, 0.2, 0.2, 1));
+			bool popupOpen = ImGui::BeginPopup(presetsLabel.c_str());
+			ImGui::PopStyleColor();
+			if (popupOpen) {
 				if (_charPtrs.data()) {
 					ImGui::ListBox(presetsLabel.c_str(), &_selectedIndex, (const char**)_charPtrs.data(), _charPtrs.size());
 				}
@@ -134,6 +137,7 @@ namespace msa {
 				}
 				ImGui::EndPopup();
 			}
+
 		}
 
 	protected:
@@ -161,7 +165,10 @@ namespace msa {
 
 			//ImGui::BeginChild("scrolling");
 			//if (ImGui::CollapsingHeader(label.c_str(), &pp->isOpen(), 0)) {
-			if (ImGui::TreeNode(label.c_str())) {//, &pp->isOpen(), 0)) {
+			//ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1, 0.5, 0, 1));
+			bool treeOpen = ImGui::TreeNode(label.c_str());
+			//ImGui::PopStyleColor();
+			if (treeOpen) {//, &pp->isOpen(), 0)) {
 				ImGui::Separator();
 
 				// draw preset controls
