@@ -3,7 +3,7 @@
         <Parameter type="class msa::controlfreak::ParameterFloat" name="myfloat" value="300.000000000"></Parameter>
         <Parameter type="class msa::controlfreak::ParameterInt" name="myint" value="7"></Parameter>
         <Parameter type="class msa::controlfreak::ParameterBool" name="mybool" value="1"></Parameter>
-        <Parameter type="class msa::controlfreak::ParameterBool" name="mybang" value="0"></Parameter>
+        <Parameter type="class msa::controlfreak::ParameterBool" name="mybang" value="1"></Parameter>
         <Parameter type="class msa::controlfreak::ParameterFloat" name="myfloat2" value="0.699999988"></Parameter>
         <Parameter type="class msa::controlfreak::ParameterFloat" name="myfloat3" value="0.000000000"></Parameter>
         <Parameter type="class msa::controlfreak::ParameterFloat" name="myfloat4" value="0.000000000"></Parameter>
@@ -26,9 +26,9 @@
             <Parameter type="class msa::controlfreak::ParameterBool" name="enabled" value="1"></Parameter>
             <Parameter type="class msa::controlfreak::ParameterFloat" name="brightness" value="0.000000000"></Parameter>
             <Parameter type="class msa::controlfreak::ParameterFloat" name="contrast" value="0.000000000"></Parameter>
-            <Parameter type="class msa::controlfreak::ParameterBool" name="flip x" value="0"></Parameter>
-            <Parameter type="class msa::controlfreak::ParameterBool" name="flip y" value="0"></Parameter>
-            <Parameter type="class msa::controlfreak::ParameterBool" name="reset" value="0"></Parameter>
+            <Parameter type="class msa::controlfreak::ParameterBool" name="flip x" value="1"></Parameter>
+            <Parameter type="class msa::controlfreak::ParameterBool" name="flip y" value="1"></Parameter>
+            <Parameter type="class msa::controlfreak::ParameterBool" name="reset" value="1"></Parameter>
             <Parameter type="class msa::controlfreak::ParameterGroup" name="preprocessing">
                 <Parameter type="class msa::controlfreak::ParameterGroup" name="blur">
                     <Parameter type="class msa::controlfreak::ParameterBool" name="enabled" value="0"></Parameter>
@@ -36,16 +36,16 @@
                     <Parameter type="class msa::controlfreak::ParameterInt" name="iterations" value="9"></Parameter>
                 </Parameter>
                 <Parameter type="class msa::controlfreak::ParameterGroup" name="median">
-                    <Parameter type="class msa::controlfreak::ParameterBool" name="enabled" value="0"></Parameter>
-                    <Parameter type="class msa::controlfreak::ParameterInt" name="kernelSize" value="0"></Parameter>
-                    <Parameter type="class msa::controlfreak::ParameterInt" name="iterations" value="0"></Parameter>
+                    <Parameter type="class msa::controlfreak::ParameterBool" name="enabled" value="1"></Parameter>
+                    <Parameter type="class msa::controlfreak::ParameterInt" name="kernelSize" value="3"></Parameter>
+                    <Parameter type="class msa::controlfreak::ParameterInt" name="iterations" value="1"></Parameter>
                 </Parameter>
             </Parameter>
             <Parameter type="class msa::controlfreak::ParameterGroup" name="optical flow">
-                <Parameter type="class msa::controlfreak::ParameterBool" name="enabled" value="0"></Parameter>
+                <Parameter type="class msa::controlfreak::ParameterBool" name="enabled" value="1"></Parameter>
                 <Parameter type="class msa::controlfreak::ParameterNamedIndex" name="method" value="0"></Parameter>
                 <Parameter type="class msa::controlfreak::ParameterFloat" name="velMult" value="0.000000000"></Parameter>
-                <Parameter type="class msa::controlfreak::ParameterInt" name="windowSize" value="0"></Parameter>
+                <Parameter type="class msa::controlfreak::ParameterInt" name="windowSize" value="1"></Parameter>
             </Parameter>
         </Parameter>
         <Parameter type="class msa::controlfreak::ParameterFloat" name="unclamped float" value="150.000000000"></Parameter>

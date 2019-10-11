@@ -17,27 +17,16 @@
 #include "ofxMSAControlFreak.h"
 
 namespace msa {
-namespace controlfreak {
-namespace imgui {
+	namespace controlfreak {
+		namespace imgui {
+			// all of the below are to be called inside a gui.begin() / gui.end() block
 
-    // get reference to internal gui
-//    ofxImGui::Gui& getGui();
+			// draw a single parameter
+			void draw(Parameter& p, string labelPrefix = "");
 
-//    void drawWithWindow(const ParameterGroup& params, int windowWidth, int windowHeight, ImGuiSetCond initCond = ImGuiSetCond_FirstUseEver, float fontSize = 1.0f);
-
-    //--------------------------------------------------------------
-    // single functions
-    // all of the below are to be called inside a gui.begin() / gui.end() block
-
-    // draw a single parameter
-    void draw(Parameter& p, string labelPrefix = "");
-
-    // draw parameter group with internal ofxImGui
-//    void draw(const ParameterGroup& params);
-
-    // draw parameter group with passed in ofxImGui
-//    void draw(const ParameterGroup& params, ofxImGui::Gui& gui);
-
-}
-}
+			// open a Yes/No confirmation popup window
+			// returns 0 (while open), 1 (yes), 2 (no), 3 (cancel) // TODO: generalize to vector of buttons?
+			int openConfirmationPopup(string title, string message = "", bool showCancel = false);
+		}
+	}
 }
