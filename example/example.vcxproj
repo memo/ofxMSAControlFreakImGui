@@ -191,7 +191,6 @@
     <ClCompile Include="..\..\..\addons\ofxImGui\src\EngineOpenGLES.cpp" />
     <ClCompile Include="..\..\..\addons\ofxImGui\src\EngineVk.cpp" />
     <ClCompile Include="..\..\..\addons\ofxImGui\src\Gui.cpp" />
-    <ClCompile Include="..\..\..\addons\ofxImGui\src\Helpers.cpp" />
     <ClCompile Include="..\..\..\addons\ofxImGui\src\ofxImGuiLoggerChannel.cpp" />
     <ClCompile Include="..\..\..\addons\ofxImGui\libs\imgui\src\imgui.cpp" />
     <ClCompile Include="..\..\..\addons\ofxImGui\libs\imgui\src\imgui_demo.cpp" />
@@ -218,7 +217,6 @@
     <ClInclude Include="..\..\..\addons\ofxImGui\src\EngineOpenGLES.h" />
     <ClInclude Include="..\..\..\addons\ofxImGui\src\EngineVk.h" />
     <ClInclude Include="..\..\..\addons\ofxImGui\src\Gui.h" />
-    <ClInclude Include="..\..\..\addons\ofxImGui\src\Helpers.h" />
     <ClInclude Include="..\..\..\addons\ofxImGui\src\imconfig.h" />
     <ClInclude Include="..\..\..\addons\ofxImGui\src\ofxImGui.h" />
     <ClInclude Include="..\..\..\addons\ofxImGui\src\ofxImGuiLoggerChannel.h" />
